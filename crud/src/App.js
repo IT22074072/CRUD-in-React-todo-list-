@@ -25,8 +25,14 @@ function App() {
           <button onClick={addTask}>Add Task</button>
         </div>
         <div className="list">
-          {todoList.map((task) => {  //displaing tasks one by one
-            return <h1>{task}</h1>;
+          {todoList.map((task) => {
+            //displaing tasks one by one
+            return (
+              <div>
+                <h1>{task}</h1>
+                <button>X</button>
+              </div>
+            );
           })}
         </div>
       </h1>
