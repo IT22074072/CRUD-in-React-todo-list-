@@ -12,12 +12,23 @@ function App() {
   };
 
 
+  const addTask=()=>{
+    // can't do this - setTodoList(newTask)
+    //...spread operator
+    const newTodoList = [...todoList,newTask];
+    setTodoList(newTodoList);
+
+
+
+  };
+
+
   return (
     <div className="App">
       <h1>
         <div className='addTask'>
           <input onChange={handleChange}/>
-          <button>Add Task</button>
+          <button onClick={addTask}>Add Task</button>
         </div>
         <div className='list'></div>
       </h1>
