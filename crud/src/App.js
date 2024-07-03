@@ -5,12 +5,18 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState("");
-  
+
+  const handleChange=(event)=>{
+    setNewTask(event.target.value);
+
+  };
+
+
   return (
     <div className="App">
       <h1>
         <div className='addTask'>
-          <input/>
+          <input onChange={handleChange}/>
           <button>Add Task</button>
         </div>
         <div className='list'></div>
