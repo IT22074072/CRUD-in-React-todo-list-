@@ -10,10 +10,18 @@ function App() {
   };
 
   const addTask = () => {
+    
+    //creating an object
+    const task = {
+      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+      taskName: newTask,
+    };
+
     // can't do this - setTodoList(newTask)
     //...spread operator
     //copy all the elements of the todoList to the newTodoList and append newTask
-    const newTodoList = [...todoList, newTask];
+    //const newTodoList = [...todoList, newTask];
+    const newTodoList = [...todoList, task];
     setTodoList(newTodoList);
   };
 
@@ -39,11 +47,9 @@ function App() {
       return task !== taskName;
     });
 
-    setTodoList(newTodoList);  
+    setTodoList(newTodoList);
     // by single line - setTodoList(todoList.filter((task) => task !== taskName));
   };
-  
-  
 
   return (
     <div className="App">
@@ -55,9 +61,10 @@ function App() {
         <div className="list">
           {todoList.map((task) => {
             //displaing tasks one by one
+            //deleting the selected object not the task name like previously
             return (
               <div>
-                <h1>{task}</h1>
+                <h1>{task.taskName}</h1>      
                 <button onClick={() => deleteTask(task)}>X</button>
               </div>
             );
