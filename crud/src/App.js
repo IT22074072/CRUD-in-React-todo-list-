@@ -63,7 +63,7 @@ function App() {
           {todoList.map((task) => {
             //displaing tasks one by one
             //deleting the selected object not the task name like previously
-            return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>;
+            return <Task key ={task.id} taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>;
           })}
         </div>
       </h1>
