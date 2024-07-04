@@ -10,7 +10,6 @@ function App() {
   };
 
   const addTask = () => {
-    
     //creating an object
     const task = {
       id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
@@ -25,7 +24,7 @@ function App() {
     setTodoList(newTodoList);
   };
 
-  const deleteTask = (taskName) => {
+  const deleteTask = (id) => {
     /*
     const arr = ["Dini", "Pipi", "JK"];
     const newArr = arr.filter((name)=>{   //logic of the filter function to delete a specific task
@@ -44,7 +43,7 @@ function App() {
         return true
       }
       */
-      return task !== taskName;
+      return task.id !== id;
     });
 
     setTodoList(newTodoList);
@@ -64,8 +63,8 @@ function App() {
             //deleting the selected object not the task name like previously
             return (
               <div>
-                <h1>{task.taskName}</h1>      
-                <button onClick={() => deleteTask(task)}>X</button>
+                <h1>{task.taskName}</h1>
+                <button onClick={() => deleteTask(task.id)}>X</button>
               </div>
             );
           })}
