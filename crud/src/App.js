@@ -22,7 +22,6 @@ function App() {
 
   };
 
-
   return (
     <div className="App">
       <h1>
@@ -32,7 +31,10 @@ function App() {
         </div>
         <div className='list'>
           {todoList.map((task) => {
-            return <h1>{task}</h1>
+            return <div>
+              <h1>{task}</h1>
+              <button>X</button>
+              </div>
           })}
 
         </div>
